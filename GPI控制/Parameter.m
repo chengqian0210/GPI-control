@@ -1,0 +1,22 @@
+m = 0.02327;
+R = 0.03395;
+d = 0.05090;
+g = 9.81;
+L = 0.275;
+J = 10.7284;
+k = -m*g*d/L/(J/R^2+m);
+z = [];
+i =1;
+p = [-2 -2.5 -3 -3.5 -4 -4.5 -5 -5.5];
+[b,a] = zp2tf(z,p,i);
+sys = tf([b],[a]);
+k0 = sys.Denominator{1}(9);
+k1 = sys.Denominator{1}(8);
+k2 = sys.Denominator{1}(7);
+k3 = sys.Denominator{1}(6);
+k4 = sys.Denominator{1}(5);
+k5 = sys.Denominator{1}(4);
+k6 = sys.Denominator{1}(3);
+k7 = sys.Denominator{1}(2);
+
+Xit=1;wt=20;
